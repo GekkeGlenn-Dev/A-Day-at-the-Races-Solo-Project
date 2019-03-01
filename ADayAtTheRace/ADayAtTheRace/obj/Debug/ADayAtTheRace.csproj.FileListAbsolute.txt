@@ -8,3 +8,13 @@ D:\coderen\amo\Project\leerjaar_1\periode_3\adayattherace\ADayAtTheRace\ADayAtTh
 D:\coderen\amo\Project\leerjaar_1\periode_3\adayattherace\ADayAtTheRace\ADayAtTheRace\obj\Debug\ADayAtTheRace.csproj.CoreCompileInputs.cache
 D:\coderen\amo\Project\leerjaar_1\periode_3\adayattherace\ADayAtTheRace\ADayAtTheRace\obj\Debug\ADayAtTheRace.exe
 D:\coderen\amo\Project\leerjaar_1\periode_3\adayattherace\ADayAtTheRace\ADayAtTheRace\obj\Debug\ADayAtTheRace.pdb
+D:\coderen\amo\Project\leerjaar_1\periode_3\a_day_at_the_race\ADayAtTheRace\ADayAtTheRace\bin\Debug\ADayAtTheRace.exe.config
+D:\coderen\amo\Project\leerjaar_1\periode_3\a_day_at_the_race\ADayAtTheRace\ADayAtTheRace\bin\Debug\ADayAtTheRace.exe
+D:\coderen\amo\Project\leerjaar_1\periode_3\a_day_at_the_race\ADayAtTheRace\ADayAtTheRace\bin\Debug\ADayAtTheRace.pdb
+D:\coderen\amo\Project\leerjaar_1\periode_3\a_day_at_the_race\ADayAtTheRace\ADayAtTheRace\obj\Debug\ADayAtTheRace.csprojAssemblyReference.cache
+D:\coderen\amo\Project\leerjaar_1\periode_3\a_day_at_the_race\ADayAtTheRace\ADayAtTheRace\obj\Debug\ADayAtTheRace.MainForm.resources
+D:\coderen\amo\Project\leerjaar_1\periode_3\a_day_at_the_race\ADayAtTheRace\ADayAtTheRace\obj\Debug\ADayAtTheRace.Properties.Resources.resources
+D:\coderen\amo\Project\leerjaar_1\periode_3\a_day_at_the_race\ADayAtTheRace\ADayAtTheRace\obj\Debug\ADayAtTheRace.csproj.GenerateResource.cache
+D:\coderen\amo\Project\leerjaar_1\periode_3\a_day_at_the_race\ADayAtTheRace\ADayAtTheRace\obj\Debug\ADayAtTheRace.csproj.CoreCompileInputs.cache
+D:\coderen\amo\Project\leerjaar_1\periode_3\a_day_at_the_race\ADayAtTheRace\ADayAtTheRace\obj\Debug\ADayAtTheRace.exe
+D:\coderen\amo\Project\leerjaar_1\periode_3\a_day_at_the_race\ADayAtTheRace\ADayAtTheRace\obj\Debug\ADayAtTheRace.pdb

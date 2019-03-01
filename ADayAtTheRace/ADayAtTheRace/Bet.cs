@@ -7,11 +7,11 @@ using System.Windows.Forms;
 
 namespace ADayAtTheRace
 {
-    class Bet : Guy
+    class Bet
     {
-        public int Amount; // The amount of cash that was bet
-        public int Dog; // The number of the dog the bet is on
-        public Guy Bettor; // The guy who placed the bet
+        public int Amount { get; set; } // The amount of cash that was bet
+        public int Dog { get; set; } // The number of the dog the bet is on
+        public Guy Bettor { get; set; } // The guy who placed the bet
 
         public string GetDescription()
         {
@@ -21,11 +21,11 @@ namespace ADayAtTheRace
             //(“Joe hasn’t placed a bet”).
             if (this.Amount == 0)
             {
-                return this.Bettor.MyLabel.Text = string.Format("{0} heeft niks ingezet.", this.Bettor.Name);
+                return string.Format("{0} heeft niks ingezet!", this.Bettor.Name);
             }
             else
             {
-                return this.Bettor.MyLabel.Text = string.Format("{0} zet € {1},- op hond #{2}", this.Bettor.Name, this.Amount.ToString(), this.Dog.ToString());
+                return string.Format("{0} heeft € {1},- op hond #{2} ingezet", this.Bettor.Name, this.Amount.ToString(), this.Dog.ToString());
             }
 
         }

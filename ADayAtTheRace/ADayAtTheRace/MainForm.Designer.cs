@@ -43,9 +43,19 @@
             this.bobRadioButton = new System.Windows.Forms.RadioButton();
             this.joeRadioButton = new System.Windows.Forms.RadioButton();
             this.minimumBetLabel = new System.Windows.Forms.Label();
+            this.grayHound4ImageBox = new System.Windows.Forms.PictureBox();
+            this.grayHound3ImageBox = new System.Windows.Forms.PictureBox();
+            this.grayHound2ImageBox = new System.Windows.Forms.PictureBox();
+            this.grayHound1ImageBox = new System.Windows.Forms.PictureBox();
+            this.raceTrackImageBox = new System.Windows.Forms.PictureBox();
             this.bettorParlorGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dogUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.betAmmountUpAndDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grayHound4ImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grayHound3ImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grayHound2ImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grayHound1ImageBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.raceTrackImageBox)).BeginInit();
             this.SuspendLayout();
             // 
             // bettorParlorGroupBox
@@ -66,7 +76,7 @@
             this.bettorParlorGroupBox.Controls.Add(this.bobRadioButton);
             this.bettorParlorGroupBox.Controls.Add(this.joeRadioButton);
             this.bettorParlorGroupBox.Controls.Add(this.minimumBetLabel);
-            this.bettorParlorGroupBox.Location = new System.Drawing.Point(12, 434);
+            this.bettorParlorGroupBox.Location = new System.Drawing.Point(12, 230);
             this.bettorParlorGroupBox.Name = "bettorParlorGroupBox";
             this.bettorParlorGroupBox.Size = new System.Drawing.Size(722, 185);
             this.bettorParlorGroupBox.TabIndex = 0;
@@ -129,6 +139,7 @@
             this.startRaceButton.TabIndex = 9;
             this.startRaceButton.Text = "Start Race!";
             this.startRaceButton.UseVisualStyleBackColor = true;
+            this.startRaceButton.Click += new System.EventHandler(this.startRaceButton_Click);
             // 
             // dogUpDown
             // 
@@ -256,11 +267,67 @@
             this.minimumBetLabel.TabIndex = 0;
             this.minimumBetLabel.Text = "Minimum Bet";
             // 
+            // grayHound4ImageBox
+            // 
+            this.grayHound4ImageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.grayHound4ImageBox.Image = global::ADayAtTheRace.Properties.Resources.afbeelding_hond;
+            this.grayHound4ImageBox.Location = new System.Drawing.Point(12, 188);
+            this.grayHound4ImageBox.Name = "grayHound4ImageBox";
+            this.grayHound4ImageBox.Size = new System.Drawing.Size(75, 20);
+            this.grayHound4ImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.grayHound4ImageBox.TabIndex = 5;
+            this.grayHound4ImageBox.TabStop = false;
+            // 
+            // grayHound3ImageBox
+            // 
+            this.grayHound3ImageBox.Image = global::ADayAtTheRace.Properties.Resources.afbeelding_hond;
+            this.grayHound3ImageBox.Location = new System.Drawing.Point(12, 132);
+            this.grayHound3ImageBox.Name = "grayHound3ImageBox";
+            this.grayHound3ImageBox.Size = new System.Drawing.Size(75, 20);
+            this.grayHound3ImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.grayHound3ImageBox.TabIndex = 4;
+            this.grayHound3ImageBox.TabStop = false;
+            // 
+            // grayHound2ImageBox
+            // 
+            this.grayHound2ImageBox.Image = global::ADayAtTheRace.Properties.Resources.afbeelding_hond;
+            this.grayHound2ImageBox.Location = new System.Drawing.Point(12, 72);
+            this.grayHound2ImageBox.Name = "grayHound2ImageBox";
+            this.grayHound2ImageBox.Size = new System.Drawing.Size(75, 20);
+            this.grayHound2ImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.grayHound2ImageBox.TabIndex = 3;
+            this.grayHound2ImageBox.TabStop = false;
+            // 
+            // grayHound1ImageBox
+            // 
+            this.grayHound1ImageBox.Image = global::ADayAtTheRace.Properties.Resources.afbeelding_hond;
+            this.grayHound1ImageBox.Location = new System.Drawing.Point(12, 21);
+            this.grayHound1ImageBox.Name = "grayHound1ImageBox";
+            this.grayHound1ImageBox.Size = new System.Drawing.Size(75, 20);
+            this.grayHound1ImageBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.grayHound1ImageBox.TabIndex = 2;
+            this.grayHound1ImageBox.TabStop = false;
+            // 
+            // raceTrackImageBox
+            // 
+            this.raceTrackImageBox.BackgroundImage = global::ADayAtTheRace.Properties.Resources.afbeelding_racebaan;
+            this.raceTrackImageBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.raceTrackImageBox.Location = new System.Drawing.Point(12, 12);
+            this.raceTrackImageBox.Name = "raceTrackImageBox";
+            this.raceTrackImageBox.Size = new System.Drawing.Size(722, 212);
+            this.raceTrackImageBox.TabIndex = 1;
+            this.raceTrackImageBox.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 631);
+            this.ClientSize = new System.Drawing.Size(746, 423);
+            this.Controls.Add(this.grayHound4ImageBox);
+            this.Controls.Add(this.grayHound3ImageBox);
+            this.Controls.Add(this.grayHound2ImageBox);
+            this.Controls.Add(this.grayHound1ImageBox);
+            this.Controls.Add(this.raceTrackImageBox);
             this.Controls.Add(this.bettorParlorGroupBox);
             this.Name = "MainForm";
             this.Text = "Form1";
@@ -269,7 +336,13 @@
             this.bettorParlorGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dogUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.betAmmountUpAndDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grayHound4ImageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grayHound3ImageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grayHound2ImageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grayHound1ImageBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.raceTrackImageBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -290,6 +363,11 @@
         private System.Windows.Forms.Label joeBetsLabel;
         private System.Windows.Forms.Button startRaceButton;
         private System.Windows.Forms.Label betsLabel;
+        private System.Windows.Forms.PictureBox raceTrackImageBox;
+        private System.Windows.Forms.PictureBox grayHound1ImageBox;
+        private System.Windows.Forms.PictureBox grayHound2ImageBox;
+        private System.Windows.Forms.PictureBox grayHound3ImageBox;
+        private System.Windows.Forms.PictureBox grayHound4ImageBox;
     }
 }
 

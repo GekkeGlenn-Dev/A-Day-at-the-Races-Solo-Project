@@ -20,9 +20,9 @@ namespace ADayAtTheRace
         public void UpdateLabel()
         {
             //set my label to my bet's description, and the label on my
-            this.MyLabel.Text = string.Format("{0} Heeft nog niks ingezet!", this.Name);
             //radio button to show my cash ("Joe, Geld: € 43,00")
             this.MyRadioButton.Text = string.Format("{0}, Geld: €{1},-", this.Name, this.Cash);
+            
         }
 
         public bool PlaceBet(int amount, int dog)
@@ -33,7 +33,7 @@ namespace ADayAtTheRace
             if (this.Cash >= amount)
             {
                 MyBet.Amount = amount;
-                MyBet.Dog = dog;
+                MyBet.Dog = dog - 1;
                 return true;
             }
             else
@@ -42,7 +42,11 @@ namespace ADayAtTheRace
             }
         }
 
-        public void ClearBet() { } //reset my bet so it's zero
+        public void ClearBet() //reset my bet so it's zero
+        {
+            this.MyBet.Amount = 0;
+            this.MyBet.GetDescription();
+        }
 
         public void Collect(int Winner) { } // Ask my bet to pay out
     }
