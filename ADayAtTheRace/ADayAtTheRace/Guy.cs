@@ -10,7 +10,7 @@ namespace ADayAtTheRace
     class Guy
     {
         public string Name { get; set; } // The guy's name
-        public Bet MyBet { get; set; } // An instance of Bet() that has his bet
+        public Bet MyBet { get; set; }// An instance of Bet() that has his bet
         public int Cash { get; set; } // How much cash he has
                                       
         // The last two fields are the guy’s GUI controls on the form
@@ -32,8 +32,9 @@ namespace ADayAtTheRace
             
             if (this.Cash >= amount)
             {
-                MyBet.Amount = amount;
-                MyBet.Dog = dog - 1;
+                MyBet = new Bet();
+                this.MyBet.Amount = amount;
+                this.MyBet.Dog = dog - 1;
                 return true;
             }
             else
@@ -48,6 +49,6 @@ namespace ADayAtTheRace
             this.MyBet.GetDescription();
         }
 
-        public void Collect(int Winner) { } // Ask my bet to pay out
+        public void Collect(int Winner) { this.MyBet.PayOut(Winner); } // Ask my bet to pay out
     }
 }

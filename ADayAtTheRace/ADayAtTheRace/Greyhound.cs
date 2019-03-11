@@ -34,7 +34,7 @@ namespace ADayAtTheRace
 
         public void TakeStartingPosition()
         {
-            // Reset my location to the start line
+            this.MyPictureBox.Left = this.StartingPosition;
         }
     }
 }
