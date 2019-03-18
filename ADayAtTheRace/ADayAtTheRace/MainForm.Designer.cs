@@ -82,6 +82,7 @@
             this.bettorParlorGroupBox.TabIndex = 0;
             this.bettorParlorGroupBox.TabStop = false;
             this.bettorParlorGroupBox.Text = "Gokkers";
+            this.bettorParlorGroupBox.Enter += new System.EventHandler(this.bettorParlorGroupBox_Enter);
             // 
             // betsLabel
             // 

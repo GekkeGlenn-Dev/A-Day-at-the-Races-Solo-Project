@@ -21,19 +21,10 @@ namespace ADayAtTheRace
         Guy bob = new Guy();
         Guy al = new Guy();
 
-        //Bet joeBet = new Bet();
-        Bet bobBet = new Bet();
-        Bet alBet = new Bet();
-
         int minimumBet = 5;
         int maximumBet = 15;
         int raceTrackLength;
         int houndStartLocation;
-        bool raceIsRunning;
-
-        int joeStartCash = 50;
-        int bobStartCash = 75;
-        int alStartCash = 45;
 
         int selectedGuy = 0;
 
@@ -52,14 +43,12 @@ namespace ADayAtTheRace
            
 
             //Create profile Joe
-            Guy[0] = new Guy() { Name = "Joe", Cash = joeStartCash, MyRadioButton = joeRadioButton, MyLabel = joeBetsLabel, MyBet = Bet[0] };
-            Bet[0] = new Bet() { Amount = 0, Bettor = Guy[0] };
+            Guy[0] = new Guy() { Name = "Joe", Cash = 50, MyRadioButton = joeRadioButton, MyLabel = joeBetsLabel };
             //Create profile Bob
-            Guy[1] = new Guy() { Name = "Bob", Cash = bobStartCash, MyRadioButton = bobRadioButton, MyLabel = bobBetsLabel, MyBet = Bet[1] };
-            Bet[1] = new Bet() { Amount = 0, Bettor = Guy[1] };
+            Guy[1] = new Guy() { Name = "Bob", Cash = 75, MyRadioButton = bobRadioButton, MyLabel = bobBetsLabel };
             //Create profile Al
-            Guy[2] = new Guy() { Name = "Al", Cash = alStartCash, MyRadioButton = alRadioButton, MyLabel = alBetsLabel, MyBet = Bet[2] };
-            Bet[2] = new Bet() { Amount = 0, Bettor = Guy[2] };
+            Guy[2] = new Guy() { Name = "Al", Cash = 45, MyRadioButton = alRadioButton, MyLabel = alBetsLabel };
+            
 
             //create hounds 1, 2, 3 and 4
             Greyhound[0] = new Greyhound() { StartingPosition = houndStartLocation, RacetrackLength = raceTrackLength, MyPictureBox = grayHound1ImageBox };
@@ -75,7 +64,7 @@ namespace ADayAtTheRace
             //add text in textboxes
             for (int i = 0; i < Guy.Length; i++)
             {
-                Guy[i].MyLabel.Text = string.Format("{0} Heeft nog niks ingezet!", Guy[i].Name);
+                Guy[i].PlaceBet(0, 0);
                 Guy[i].UpdateLabel();
             }
         }
@@ -100,12 +89,18 @@ namespace ADayAtTheRace
 
         private void submitBet_Click(object sender, EventArgs e)
         {
-            BetSystem(selectedGuy, (int)betAmmountUpAndDown.Value, (int)dogUpDown.Value);
-        
+            int betAmount = (int)betAmmountUpAndDown.Value;
+            int choosedDog = (int)dogUpDown.Value;
+
+            //BetSystem(selectedGuy, betAmount, choosedDog);
+            Guy[selectedGuy].PlaceBet((int)betAmmountUpAndDown.Value, (int)dogUpDown.Value);
+            Guy[selectedGuy].UpdateLabel();
         }
 
         private void startRaceButton_Click(object sender, EventArgs e)
         {
+            startRaceButton.Enabled = false;
+            submitBet.Enabled = false;
             while (true)
             {
                 for (int i = 0; i < Greyhound.Length; i++)
@@ -113,7 +108,7 @@ namespace ADayAtTheRace
                     Thread.Sleep(6);
                     Random randomizer = new Random();
                     Greyhound[randomizer.Next(0, 4)].Run();
-                    if (Greyhound[i].Run() == true)
+                    if (Greyhound[i].Run())
                     {
                         SelectWinner(i + 1);
                         return;
@@ -124,65 +119,25 @@ namespace ADayAtTheRace
         
         private void SelectWinner(int Winner)
         {
-            MessageBox.Show("Dog " + Winner + " is the Winner!");
-            for (int i = 0; i < 3; i++)
+            MessageBox.Show("Hond " + Winner + " is de Winnaar!");
+                
+            for (int i = 0; i < Guy.Length; i++)
             {
                 Guy[i].Collect(Winner);
                 Guy[i].UpdateLabel();
-                for (int a = 0; a < Greyhound.Length; a++)
-                {
-                    Greyhound[i].TakeStartingPosition();
-                }
-                for (int j = 0; j < Guy.Length; j++)
-                {
-                    Guy[i].ClearBet();
-                }
+                Guy[i].ClearBet();
             }
+            for (int i = 0; i < Greyhound.Length; i++)
+            {
+                Greyhound[i].TakeStartingPosition();
+            }
+            submitBet.Enabled = true;
+            startRaceButton.Enabled = true;
         }
 
-        private void BetSystem(int bettor, int newBetAmount, int chosenDog)
+        private void bettorParlorGroupBox_Enter(object sender, EventArgs e)
         {
-            if (Guy[bettor].MyRadioButton.Checked)
-            {
-                int amountChange;
 
-                int oldBetAmount = Bet[bettor].Amount;
-
-                if (Guy[bettor].PlaceBet(newBetAmount, chosenDog) == true)
-                {
-                    //checks of the new bet is smaller then the old bet
-                    if (oldBetAmount > newBetAmount)
-                    {
-                        amountChange = oldBetAmount - newBetAmount;
-                        Guy[bettor].Cash += amountChange;
-                        Bet[bettor].Amount = newBetAmount;
-                        Guy[bettor].UpdateLabel();
-                        Guy[bettor].MyLabel.Text = Bet[bettor].GetDescription();
-                    }
-                    //checks of the new bet is greater then the old bet
-                    else if (oldBetAmount <= newBetAmount)
-                    {
-                        amountChange = newBetAmount - oldBetAmount;
-                        Guy[bettor].Cash -= amountChange;
-                        Bet[bettor].Amount = newBetAmount;
-                        Guy[bettor].UpdateLabel();
-                        Guy[bettor].MyLabel.Text = Bet[bettor].GetDescription();
-                    }
-                    else
-                    {
-                        MessageBox.Show("er is iets fout gegeaan");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(string.Format("{0} heeft niet genoeg om het geld bedrag (€ {1},-) in te zetten", Guy[bettor].Name, (int)betAmmountUpAndDown.Value));
-                }
-            }
-            else
-            {
-                MessageBox.Show("Er is niemand geselecteerd!");
-            
-            }
         }
     }
 }

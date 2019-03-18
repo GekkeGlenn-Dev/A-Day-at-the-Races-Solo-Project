@@ -21,6 +21,9 @@ namespace ADayAtTheRace
         {
             //set my label to my bet's description, and the label on my
             //radio button to show my cash ("Joe, Geld: € 43,00")
+            //this.MyLabel.Text = MyBet.GetDescription();
+            MyBet.Bettor = this;
+            this.MyLabel.Text = this.MyBet.GetDescription();
             this.MyRadioButton.Text = string.Format("{0}, Geld: €{1},-", this.Name, this.Cash);
             
         }
@@ -34,11 +37,12 @@ namespace ADayAtTheRace
             {
                 MyBet = new Bet();
                 this.MyBet.Amount = amount;
-                this.MyBet.Dog = dog - 1;
+                this.MyBet.Dog = dog;
                 return true;
             }
             else
             {
+                MessageBox.Show(string.Format("{0} heeft niet genoeg geld om in te zetten",this.Name));
                 return false;
             }
         }
